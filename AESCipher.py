@@ -16,7 +16,7 @@ class AESCipher(object):
         return b64encode(iv + encrypted_text).decode("utf-8")
 
     def decrypt(self, encrypted_text):
-        encrypted_text = b64decode(text)
+        encrypted_text = b64decode(encrypted_text)
         iv = encrypted_text[:self.block_size]
         cipher = AES.new(self.key, AES.MODE_CBC, iv)
         plain_text = cipher.decrypt(encrypted_text[self.block_size:]).decode("utf-8")
