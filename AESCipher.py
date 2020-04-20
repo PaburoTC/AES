@@ -3,10 +3,6 @@ from Crypto import Random
 from Crypto.Cipher import AES
 from base64 import b64encode, b64decode
 
-
-block_size = AES.block_size
-
-
 class AESCipher(object):
     def __init__(self, key):
         self.block_size = AES.block_size
